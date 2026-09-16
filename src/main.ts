@@ -92,81 +92,83 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </main>
 
     <dialog id="task-dialog" class="task-dialog">
-      <form id="task-form" class="task-form">
-        <div class="form-heading">
-          <div>
-            <p class="section-eyebrow">Nueva tarea</p>
-            <h2 id="task-dialog-title">Crear tarea</h2>
-          </div>
+  <form id="task-form" class="task-form">
+    <div class="form-heading">
+      <p class="section-eyebrow">Nueva tarea</p>
 
-          <button
-            id="close-dialog-button"
-            class="icon-button"
-            type="button"
-            aria-label="Cerrar formulario"
-          >
-            ×
-          </button>
-        </div>
+      <div class="title-row">
+        <button
+          type="button"
+          id="close-dialog"
+          class="close-button"
+          aria-label="Cerrar formulario"
+        >
+          ×
+        </button>
 
-        <label for="title-input">
-          Título
-          <input
-            id="title-input"
-            name="title"
-            type="text"
-            placeholder="Ej. Preparar presentación"
-            required
-          />
-        </label>
+        <h2 id="task-dialog-title">Crear tarea</h2>
+      </div>
+    </div>
 
-        <label for="description-input">
-          Descripción
-          <textarea
-            id="description-input"
-            name="description"
-            rows="4"
-            placeholder="Describe brevemente la tarea..."
-          ></textarea>
-        </label>
+    <label for="title-input">
+      Título
+      <input
+        id="title-input"
+        name="title"
+        type="text"
+        placeholder="Ej. Preparar presentación"
+        required
+      />
+    </label>
 
-        <label for="task-category">Categoría</label>
+    <label for="description-input">
+      Descripción
+      <textarea
+        id="description-input"
+        name="description"
+        rows="4"
+        placeholder="Describe brevemente la tarea..."
+      ></textarea>
+    </label>
 
-        <input
-          id="task-category"
-          name="category"
-          type="text"
-          placeholder="Ej. Trabajo, Personal, Estudios"
-          required
-        />
+    <label for="task-category">
+      Categoría
+      <input
+        id="task-category"
+        name="category"
+        type="text"
+        placeholder="Ej. Trabajo, Personal, Estudios"
+        required
+      />
+    </label>
 
-        <label for="priority-input">
-          Prioridad
-          <select id="priority-input" name="priority">
-            <option value="low">Baja</option>
-            <option value="medium" selected>Media</option>
-            <option value="high">Alta</option>
-          </select>
-        </label>
+    <label for="priority-input">
+      Prioridad
+      <select id="priority-input" name="priority">
+        <option value="low">Baja</option>
+        <option value="medium" selected>Media</option>
+        <option value="high">Alta</option>
+      </select>
+    </label>
 
-        <div class="form-actions">
-          <button
-            id="cancel-task-button"
-            class="secondary-button"
-            type="button"
-          >
-            Cancelar
-          </button>
+    <div class="form-actions">
+      <button
+        id="cancel-task-button"
+        class="secondary-button"
+        type="button"
+      >
+        Cancelar
+      </button>
 
-          <button
-            class="primary-button"
-            type="submit"
-          >
-            Guardar tarea
-          </button>
-        </div>
-      </form>
-    </dialog>
+      <button
+        class="primary-button"
+        type="submit"
+      >
+        Guardar tarea
+      </button>
+    </div>
+  </form>
+</dialog>
   </div>
 `
 const tasksList =
@@ -250,7 +252,7 @@ const taskDialog =
   document.querySelector<HTMLDialogElement>('#task-dialog')
 
 const closeDialogButton =
-  document.querySelector<HTMLButtonElement>('#close-dialog-button')
+  document.querySelector<HTMLButtonElement>('#close-dialog')
 
 const cancelTaskButton =
   document.querySelector<HTMLButtonElement>('#cancel-task-button')

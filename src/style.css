@@ -346,3 +346,190 @@ select {
 .feedback-message.is-visible {
   display: block;
 }
+
+/* Formulario de tareas */
+#task-dialog {
+  width: min(560px, calc(100% - 2rem));
+  max-width: 560px;
+  max-height: calc(100vh - 2rem);
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgb(38 24 74 / 25%);
+  overflow: auto;
+}
+
+#task-dialog::backdrop {
+  background: rgb(35 24 58 / 60%);
+  backdrop-filter: blur(3px);
+}
+
+#task-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 2rem;
+}
+
+#task-dialog .form-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#task-dialog .section-eyebrow {
+  margin: 0;
+  color: #8a7bb5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#task-dialog .title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#task-dialog h2 {
+  margin: 0;
+  color: #211936;
+  font-size: 1.6rem;
+}
+
+#task-dialog label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: #302449;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+#task-dialog input,
+#task-dialog textarea,
+#task-dialog select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9d0eb;
+  border-radius: 10px;
+  background: #faf9fd;
+  color: #211936;
+  font: inherit;
+  padding: 0.8rem 0.9rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+#task-dialog textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+#task-dialog input:focus,
+#task-dialog textarea:focus,
+#task-dialog select:focus {
+  border-color: #8b72d8;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgb(139 114 216 / 18%);
+}
+
+#task-dialog input::placeholder,
+#task-dialog textarea::placeholder {
+  color: #9389a8;
+}
+
+/* Botón para cerrar */
+#task-dialog .close-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #eeeaf7;
+  color: #4b3b70;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#task-dialog .close-button:hover {
+  background: #e1daf2;
+  color: #302449;
+  transform: scale(1.05);
+}
+
+#task-dialog .close-button:focus-visible {
+  outline: 3px solid rgb(139 114 216 / 35%);
+  outline-offset: 2px;
+}
+
+/* Botones inferiores */
+#task-dialog .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+#task-dialog .form-actions button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.75rem 1.2rem;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+#task-dialog .form-actions button:hover {
+  transform: translateY(-1px);
+}
+
+#task-dialog .primary-button {
+  background: #8b72d8;
+  color: #ffffff;
+}
+
+#task-dialog .primary-button:hover {
+  background: #7358c4;
+}
+
+#task-dialog .secondary-button {
+  background: #eeeaf7;
+  color: #4b3b70;
+}
+
+#task-dialog .secondary-button:hover {
+  background: #e1daf2;
+}
+
+@media (max-width: 600px) {
+  #task-dialog form {
+    padding: 1.25rem;
+  }
+
+  #task-dialog .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  #task-dialog .form-actions button {
+    width: 100%;
+  }
+}

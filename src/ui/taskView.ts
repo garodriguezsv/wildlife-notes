@@ -39,7 +39,13 @@ export function renderTasks(
 
           <div>
             <span class="task-priority">
-              ${task.priority}
+              ${
+                    task.priority === 'high'
+                      ? 'Alta'
+                      : task.priority === 'medium'
+                        ? 'Media'
+                        : 'Baja'
+              }
             </span>
 
             <button
